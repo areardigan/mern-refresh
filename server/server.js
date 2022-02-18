@@ -1,6 +1,11 @@
 const express = require("express");
+const chalk = require("chalk");
+
 const dotenv = require("dotenv").config();
 const { errorHandler } = require("./middleware/errorHandling");
+const { connectDB } = require("./config/db");
+
+connectDB();
 
 const port = process.env.PORT || 8080;
 const app = express();
